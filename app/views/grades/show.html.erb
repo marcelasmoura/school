@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @grade.name %>
+</p>
+
+<p>
+  <strong>Students:</strong>
+  <ul>
+	  <% @grade.students.each do |s| %>
+	  	<li>
+		  <%= s.name %>
+	  	</li>
+	  <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @grade.teacher.name %>
+</p>
+
+<p>
+  <strong>School year:</strong>
+  <%= @grade.school_year %>
+</p>
+
+<%= link_to 'Edit', edit_grade_path(@grade) %> |
+<%= link_to 'Add Student', new_grade_add_students_at_grade_path(@grade) %> |
+<%= link_to 'Back', grades_path %>

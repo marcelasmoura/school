@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+<p><strong>Classes:</strong></p>
+<ul>
+	<li>
+	<% @student.grades.each do |grade, id| %>
+		<%= link_to grade.name, grade %>
+		<%#= link_to("Visit Class", grade_path(id: grade.id)) %>
+	<% end %>
+
+	</li>
+</ul>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> 
+<%= link_to 'Back', students_path %>
+

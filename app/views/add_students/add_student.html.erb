@@ -1,0 +1,15 @@
+Choose Student
+<br>
+<br>
+
+<%= form_with url: grade_add_students_at_grades_path(grade_id:params[:grade_id]) do |form| %>
+	<div class="field">
+	    <%= form.label :student_id %>
+	    <%= form.select :student_id, [['Select Student', '']] + Student.all.map { |n| [n.name, n.id]  } %>
+	</div>
+	<div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', grades_path %>
